@@ -31,8 +31,8 @@ import { useI18n } from 'vue-i18n';
 import { Tab, Loading } from 'bkui-vue';
 import { alertDetail } from 'monitor-api/modules/alert';
 
-import AlarmAlert from './components/alarm-alert';
 import AlarmInfo from './components/alarm-info';
+import AlarmStatus from './components/alarm-status';
 import PanelAlarm from './components/panel-alarm';
 import PanelContainer from './components/panel-container';
 import PanelEvent from './components/panel-event';
@@ -135,22 +135,26 @@ export default defineComponent({
     return () => (
       <Loading loading={isLoading.value}>
         <div class='alarm-center-detail-box'>
-          <AlarmAlert data={alterDetailData.value} />
-          <AlarmInfo data={alterDetailData.value} />
-          <Tab
-            class='panel-tab'
-            v-model:active={currentPanel.value}
-            type='unborder-card'
-          >
-            {panelTabList.map(item => (
-              <Tab.TabPanel
-                key={item.name}
-                label={item.label}
-                name={item.name}
-              />
-            ))}
-          </Tab>
-          <panelCom.value />
+          {alterDetailData.value && (
+            <>
+              <AlarmStatus data={alterDetailData.value} />
+              <AlarmInfo data={alterDetailData.value} />
+              <Tab
+                class='panel-tab'
+                v-model:active={currentPanel.value}
+                type='unborder-card'
+              >
+                {panelTabList.map(item => (
+                  <Tab.TabPanel
+                    key={item.name}
+                    label={item.label}
+                    name={item.name}
+                  />
+                ))}
+              </Tab>
+              <panelCom.value />
+            </>
+          )}
         </div>
       </Loading>
     );

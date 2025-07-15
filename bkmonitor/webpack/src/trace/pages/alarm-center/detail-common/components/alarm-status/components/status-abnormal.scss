@@ -1,0 +1,15 @@
+.alarm-center-detail-alarm-status-abnormal {
+  display: flex;
+  align-items: center;
+  background-color: #fdd;
+  padding: 0 8px 0 20px;
+  height: 36px;
+  border-left: 4px solid #ff5656;
+  color: #ff5656;
+
+  .operation-box {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+}

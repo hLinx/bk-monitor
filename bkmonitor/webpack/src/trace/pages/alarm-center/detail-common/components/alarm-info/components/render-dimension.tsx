@@ -23,24 +23,67 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { defineComponent, type PropType } from 'vue';
 
-import type { IAlert } from '../typeing';
+import { defineComponent, type PropType, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-import './alarm-info.scss';
+import _ from 'lodash';
+
+import type { IAlert } from '../../../typeing';
+
+import './render-dimension.scss';
+
+const cloudIdMap = {
+  bk_target_cloud_id: true,
+  bk_cloud_id: true,
+};
+
+const ipMap = {
+  bk_target_ip: true,
+  ip: true,
+  bk_host_id: true,
+  'tags.bcs_cluster_id': true,
+};
 
 export default defineComponent({
   props: {
     data: Object as PropType<IAlert>,
   },
+
   setup(props) {
-    console.log(props.data);
+    const { t } = useI18n();
+
+    const renderDimensionList = computed(() => {
+      return _.filter(props.data.dimensions, item => !cloudIdMap[item.key] || item.value !== 0);
+    });
+
     return () => (
-      <div class='alarm-center-detail-alarm-info'>
-        <div class='block-title'>维度信息</div>
-        <div>hello world</div>
-        <div class='block-title mt-20'>基础信息</div>
-        <div>hello world</div>
+      <div class='alarm-center-detail-alarm-info-dimension'>
+        <div class='block-title'>{t('维度信息')}</div>
+        <div class='dimension-list'>
+          {renderDimensionList.value.map(item => (
+            <div
+              key={item.display_key}
+              style={{
+                cursor: ipMap[item.key] ? 'pointer' : 'auto',
+              }}
+              class='dimension-item'
+            >
+              <div>
+                <span class='name'>{item.display_key}</span>
+                <span class='eq'>=</span>
+              </div>
+              <div
+                class={{
+                  'dimension-value': true,
+                  'info-check': ipMap[item.key],
+                }}
+              >
+                {item.display_value}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   },

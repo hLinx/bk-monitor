@@ -47,7 +47,7 @@ export interface IAlert {
     display_key: string;
     display_value: string;
     key: string;
-    value: string;
+    value: number | string;
   }[];
   duration: string;
   end_time: number;

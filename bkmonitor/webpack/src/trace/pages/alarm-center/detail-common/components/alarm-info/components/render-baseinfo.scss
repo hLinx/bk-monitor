@@ -1,0 +1,27 @@
+.alarm-center-detail-alarm-info-baseinfo {
+  .block-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #313238;
+    letter-spacing: 0;
+  }
+  table {
+    font-size: 12px;
+    color: #757880;
+    line-height: 28px;
+
+    td:nth-child(2n + 1) {
+      color: #757880;
+      padding-right: 4px;
+      text-align: right;
+      white-space: nowrap;
+      vertical-align: top;
+    }
+    td:nth-child(2n) {
+      color: #313238;
+      text-align: left;
+      vertical-align: top;
+    }
+  }
+}

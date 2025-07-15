@@ -1,0 +1,55 @@
+.alarm-center-action-config-select {
+  .value-box {
+    border-bottom: 1px solid #c4c6cc;
+    cursor: pointer;
+    display: flex;
+    height: 24px;
+    font-size: 12px;
+    align-items: center;
+    color: #63656e;
+  }
+}
+
+.tippy-box[data-theme~='alarm-center-action-config-select-panel'] {
+  .tippy-content {
+    padding: 0;
+  }
+  .select-layout {
+    display: flex;
+    overflow: hidden;
+    color: #63656e;
+    font-size: 12px;
+    .plugin-box,
+    .action-config-box {
+      height: 242px;
+      overflow-y: auto;
+    }
+    .plugin-box {
+      flex: 0 0 180px;
+      padding: 8px 0;
+      border-right: 1px solid #dcdee5;
+    }
+    .action-config-box {
+      flex: 1;
+      padding: 8px 0;
+    }
+  }
+  .select-item {
+    align-items: center;
+    display: flex;
+    height: 32px;
+    min-height: 32px;
+    overflow: hidden;
+    padding-left: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 12px;
+    width: 100%;
+    &:hover,
+    &.is-active {
+      background-color: #f4f6fa;
+      color: #3a84ff;
+      cursor: pointer;
+    }
+  }
+}

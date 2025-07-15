@@ -1,0 +1,28 @@
+.alarm-center-detail-alarm-info-dimension {
+  .block-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #313238;
+    letter-spacing: 0;
+  }
+  .dimension-list {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 16px;
+  }
+  .dimension-item {
+    padding: 4px;
+    background: #eaebf0;
+    border-radius: 2px;
+    color: #979ba5;
+    margin-right: 8px;
+    margin-top: 4px;
+  }
+  .dimension-value {
+    color: #313238;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

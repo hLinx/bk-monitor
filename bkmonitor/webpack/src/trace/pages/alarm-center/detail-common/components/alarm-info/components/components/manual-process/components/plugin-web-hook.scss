@@ -1,0 +1,40 @@
+.alarm-center-manual-process-plugin-web-hook {
+  .web-hook-base-box {
+    display: flex;
+  }
+  .http-config-wrapper {
+    background-color: #f5f6fa;
+    padding: 10px 16px 16px;
+    margin-top: 12px;
+    .bk-tab-header-item {
+      font-size: 12px;
+    }
+    .bk-tab-content {
+      display: none;
+    }
+  }
+  .web-hook-seting-config {
+    .bk-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .bk-form-item {
+      margin-right: 20px;
+      margin-bottom: 8px;
+      .bk-input {
+        width: 130px;
+      }
+    }
+    .bk-form-label {
+      font-size: 12px;
+    }
+    .bk-form-content {
+      display: flex;
+      white-space: nowrap;
+    }
+    .web-hook-seting-unit {
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+}

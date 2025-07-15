@@ -23,18 +23,31 @@
  * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  */
-import { defineComponent, type PropType } from 'vue';
+import { random } from 'monitor-common/utils/utils';
 
-import type { IAlert } from '../typeing';
-
-import './alarm-alert.scss';
-
-export default defineComponent({
-  props: {
-    data: Object as PropType<IAlert>,
-  },
-  setup(props) {
-    console.log(props.data);
-    return () => <div class='alarm-center-detail-alarm-alert'>主调成功率：65% 80%, 持续时间：30d 22h</div>;
+// 套餐内容初始化
+export const genWebKook = (): IMealData => ({
+  res: {
+    headers: [],
+    queryParams: [],
+    authorize: {
+      authConfig: {},
+      authType: 'none',
+    },
+    body: {
+      dataType: 'default',
+      contentType: 'default',
+      content: '',
+      params: [],
+    },
+    failedRetry: {
+      maxRetryTimes: 2,
+      needPoll: false,
+      notifyInterval: 120,
+      retryInterval: 2,
+      timeout: 10,
+    },
+    url: '',
+    method: 'GET',
   },
 });

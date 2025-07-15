@@ -1,0 +1,30 @@
+.alarm-center-manual-process-plugin-others {
+  .bk-form-item {
+    margin-bottom: 8px;
+  }
+  .bk-form-label {
+    line-height: 1;
+    margin-bottom: 3px;
+    min-height: 16px;
+    font-size: 12px;
+  }
+  .params-field-wrapper {
+    border: 1px solid #dcdee5;
+    min-height: 80px;
+  }
+  .params-header {
+    background: #f0f1f5;
+    border-bottom: 1px solid #dcdee5;
+    color: #63656e;
+    font-size: 12px;
+    font-weight: 700;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+  }
+  .params-item-wrapper {
+    padding: 16px 20px;
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+  }
+}

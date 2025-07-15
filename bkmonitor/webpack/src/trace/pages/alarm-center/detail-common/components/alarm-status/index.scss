@@ -1,0 +1,17 @@
+.alarm-center-detail-alarm-status {
+  height: 36px;
+
+  .status-duration-box {
+    display: flex;
+    align-items: center;
+    color: #313238;
+  }
+
+  .line {
+    background: #c4c6cc;
+    display: inline-block;
+    height: 12px;
+    margin: 0 8px;
+    width: 1px;
+  }
+}
